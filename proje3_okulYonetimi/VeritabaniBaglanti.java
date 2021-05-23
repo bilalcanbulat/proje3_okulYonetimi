@@ -27,7 +27,7 @@ public class VeritabaniBaglanti{
 	try {
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	conn = DriverManager.getConnection("jdbc:mysql://localhost/"+databaseName,databaseUserName, databasePassword);
-	System. err. println("Baðlandý ->" + databaseName);
+	System.out.println("Baðlandý ->" + databaseName);
 	stmt = (Statement) conn.createStatement();
 	
 	}catch (ClassNotFoundException e) {
@@ -35,7 +35,7 @@ public class VeritabaniBaglanti{
 	System.err.println("Baðlantý Baþarýsýz\nClassNotFoundException");
 	}
 	catch (SQLException e) {
-	System.err.println("Baðlantý Baþarýsýz\nSql Exception");
+	System.out.println("Baðlantý Baþarýsýz\nSql Exception");
 	}
 	
 	}
@@ -83,7 +83,6 @@ public class VeritabaniBaglanti{
 			//e.printStackTrace();
 		}
 	return kontrol;	
-		
 	}
 	
 
@@ -95,7 +94,6 @@ protected boolean vtAraOgrenci(String kn) {
 		while (rs.next()) {
 			System.out.println(rs.getString("adSoyad")+" "+ rs.getString("kimlikNo")+" "+rs.getString("yas")+" "+rs.getString("numara")+" "+rs.getString("sinif"));
 		}
-
 			} catch (SQLException e) {
 		System.out.println("BULUNAMADI.");
 		//e.printStackTrace();
